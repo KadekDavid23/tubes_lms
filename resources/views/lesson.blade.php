@@ -65,12 +65,12 @@
                             <input type="hidden" name="course_id" value="{{ $lesson->course->id }}" />
                             <input type="hidden" name="amount" value="{{ $lesson->course->price }}" />
                             <input type="hidden" name="lesson_id" value="{{   $lesson->course->publishedLessons[0]->slug }}" />
-                            <button class="button detail-button">Purchase Course</button>
+                            <button class="button detail-button">Beli kursus</button>
                         </form>
                     @endif
                 @else
                     <a href="{{ route('register') }}?redirect_url={{ route('courses.show', [$lesson->course->slug]) }}"
-                    class="button detail-button" style="text-align: center;">Purchase Course (${{ $lesson->course->price }})</a>
+                    class="button detail-button" style="text-align: center;">Beli Kursus (${{ $lesson->course->price }})</a>
                 @endif
             @endif
           </div>
@@ -132,17 +132,18 @@
                 border-radius: 0.8rem;
                 outline: none;
               "
+              
             >
-              <option value="1">1 - Awful</option>
-              <option value="2">2 - Not too good</option>
-              <option value="3">3 - Average</option>
-              <option value="4" selected>4 - Quite good</option>
-              <option value="5">5 - Awesome!</option>
+              <option value="1">1 - Sangat Buruk</option>
+              <option value="2">2 - Buruk</option>
+              <option value="3">3 - Sedang</option>
+              <option value="4" selected>4 - Bagus</option>
+              <option value="5">5 - Sangat Bagus!</option>
             </select>
             <button
               class="button"
               style="border: none; padding: 0.4rem 1.4rem; border-radius: 1rem"
-            >Submit</button>
+            >Simpan</button>
           </form>
         </div>
 

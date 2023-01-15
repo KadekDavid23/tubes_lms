@@ -63,9 +63,9 @@ class CourseController extends Controller
     public function store(StoreCoursesRequest $request)
     {
         $data = $request->all();
-        $data['course_image'] = $request->file('course_image')->store(
-            'images/courses', 'public'
-        );
+        // $data['course_image'] = $request->file('course_image')->store(
+        //     'images/courses', 'public'
+        // );
         $course = Course::create($data);
         $teachers = auth()->user()->isAdmin() ? array_filter((array)$request->input('teachers')) : [auth()->id()];
         $course->teachers()->sync($teachers);

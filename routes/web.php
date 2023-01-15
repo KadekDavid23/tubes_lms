@@ -32,7 +32,7 @@ Route::group(['middleware' => ['isAdmin'],'prefix' => 'admin', 'as' => 'admin.']
     Route::resource('tests', \App\Http\Controllers\Admin\TestController::class);
     Route::post('tests_restore/{id}', [\App\Http\Controllers\Admin\TestController::class,'restore'])->name('tests.restore');
     Route::delete('tests_perma_del/{id}', [\App\Http\Controllers\Admin\TestController::class,'perma_del'])->name('tests.perma_del');
-  
+
     Route::resource('questions', \App\Http\Controllers\Admin\QuestionController::class);
     Route::post('questions_restore/{id}', [\App\Http\Controllers\Admin\QuestionController::class,'restore'])->name('questions.restore');
     Route::delete('questions_perma_del/{id}', [\App\Http\Controllers\Admin\QuestionController::class,'perma_del'])->name('questions.perma_del');
@@ -40,6 +40,7 @@ Route::group(['middleware' => ['isAdmin'],'prefix' => 'admin', 'as' => 'admin.']
     Route::resource('question_options', \App\Http\Controllers\Admin\QuestionOptionController::class);
     Route::post('question_options_restore/{id}', [\App\Http\Controllers\Admin\QuestionOptionController::class, 'restore'])->name('question_options.restore');
     Route::delete('question_options_perma_del/{id}', [\App\Http\Controllers\Admin\QuestionOptionController::class, 'perma_del'])->name('question_options.perma_del');
+
 
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
 });

@@ -25,32 +25,7 @@
                     Materi
                 </a>
             </li>
-            @endcan
-            @can('test_access')
-            <li class="nav-item">
-                <a href="{{ route('admin.tests.index') }}" class="nav-link {{ request()->is('admin/tests') || request()->is('admin/tests/*') ? 'active' : '' }}">
-                    <i class="fas fa-gift nav-icon"></i>
-                    Tugas
-                </a>
-            <!-- </li>
-            @endcan
-            @can('question_access')
-            <li class="nav-item">
-                <a href="{{ route('admin.questions.index') }}" class="nav-link {{ request()->is('admin/questions') || request()->is('admin/questions/*') ? 'active' : '' }}">
-                    <i class="fas fa-gift nav-icon"></i>
-                    Question
-                </a>
-            </li>
-            @endcan
-            @can('questions_option_access')
-            <li class="nav-item">
-                <a href="{{ route('admin.question_options.index') }}" class="nav-link {{ request()->is('admin/question_options') || request()->is('admin/question_options/*') ? 'active' : '' }}">
-                    <i class="fas fa-gift nav-icon"></i>
-                    Question Option
-                </a>
-            </li>
-            @endcan
-            @can('user_access') -->
+      
             <li class="nav-item">
                 <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
                     <i class="fas fa-gift nav-icon"></i>

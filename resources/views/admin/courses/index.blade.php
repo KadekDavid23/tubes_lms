@@ -33,9 +33,6 @@
                                 #
                             </th>
                             @if(auth()->user()->isAdmin())
-                            <th>
-                                Nama Guru
-                            </th>
                             @endif
                             <th>
                                 Judul
@@ -48,9 +45,6 @@
                             </th>
                             <th>
                                 Harga
-                            </th>
-                            <th>
-                                Gambar Kursus
                             </th>
                             <th>
                                 Tanggal Start
@@ -68,13 +62,13 @@
                         <tr data-entry-id="{{ $course->id }}">
                             <td>
 
-                            </td>
+                            <!-- </td>
                             @if(auth()->user()->isAdmin())
                             <td>
                                 @foreach ($course->teachers as $singleTeachers)
                                     <span class="badge badge-info">{{ $singleTeachers->name }}</span>
                                 @endforeach
-                            </td>
+                            </td> -->
                             @endif
                             <td>
                                 {{ $course->title ?? '' }}
@@ -88,9 +82,9 @@
                             <td>
                                 {{ $course->price ?? '' }}
                             </td>
-                            <td>
+                            <!-- <td>
                                 <img width="150" src="{{ Storage::url($course->course_image) }}" alt="{{ $course->course_image }}">
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $course->start_date }}
                             </td>

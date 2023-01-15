@@ -16,9 +16,11 @@
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/style.css') }}" />
 
-    <title>Responsive Watches website</title>
+
+    <title>Octopus Learning</title>
   </head>
   <body>
+    <!-- Navbar  -->
     <header class="header" id="header">
       <div class="nav container">
         <a href="{{ route('home') }}" class="nav-logo">
@@ -28,10 +30,10 @@
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
             <li class="nav-item">
-              <a href="{{ route('home') }}" class="nav-link">Home</a>
+              <a href="{{ route('home') }}" class="nav-link">Beranda</a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('courses.index') }}" class="nav-link">Course</a>
+              <a href="{{ route('courses.index') }}" class="nav-link">Kursus</a>
             </li>
             @auth
               @if(auth()->user()->isAdmin())
@@ -73,7 +75,7 @@
                     href="{{ route('login') }}"
                     class="button nav-link"
                     style="display: block; width: 100%"
-                    >Login</a
+                    >Masuk</a
                 >
                 </li>
                 <li class="nav-item" style="width: 100%; text-align: center">
@@ -81,7 +83,7 @@
                     href="{{ route('register') }}"
                     class="button nav-link"
                     style="display: block; width: 100%"
-                    >Register</a
+                    >Daftar</a
                 >
                 </li>
             </ul>
@@ -91,13 +93,13 @@
             <i class="bx bx-x"></i>
           </div>
         </div>
-
+        
         <div class="nav-btns">
-          <i class="bx bx-moon change-theme" id="theme-button"></i>
+         <i  id="theme-button"></i>
           @guest
           <div class="btn-account">
-            <a href="{{ route('login') }}" class="btn btn-login">Login</a>
-            <a href="{{ route('register') }}" class="btn btn-register">Register</a>
+            <a href="{{ route('login') }}" class="btn btn-login">Masuk</a>
+            <a href="{{ route('register') }}" class="btn btn-register">Daftar</a>
           </div>
           @endguest
           @auth
@@ -117,8 +119,8 @@
     <div class="dropdown" id="dropdown">
       <i class="bx bx-x dropdown-close" id="dropdown-close"></i>
 
-      <a href="{{ route('courses.index') }}"><h2 class="dropdown-title-center">My Course</h2></a>
-      <a href="#" onclick="getElementById('logout').submit()"><h2 class="dropdown-title-center">Logout</h2></a>
+      <a href="{{ route('courses.index') }}"><h2 class="dropdown-title-center">Kursusku</h2></a>
+      <a href="#" onclick="getElementById('logout').submit()"><h2 class="dropdown-title-center">Keluar</h2></a>
       <form id="logout" action="{{ route('logout') }}" method="post">
           @csrf
       </form>
@@ -128,13 +130,15 @@
      @yield('content')
     </main>
 
+    <!-- Footer -->
+    
     <footer class="footer section">
       <div class="footer-container container grid">
         <div class="footer-content">
-          <h3 class="footer-title">Our Information</h3>
+          <h3 class="footer-title">Informasi Kami</h3>
           <ul class="footer-list">
-            <li>+62845263954</li>
-            <li>Bandung, INDONESIA</li>
+            <li>octopus@gmail.com</li>
+            <li>Bojongsoang, Indonesia</li>
           </ul>
         </div>
 
@@ -142,47 +146,25 @@
           <h3 class="footer-title">Menu</h3>
           <ul class="footer-links">
             <li>
-              <a href="#" class="footer-link">home</a>
+              <a href="#" class="footer-link">Beranda</a>
             </li>
             <li>
-              <a href="#" class="footer-link">course</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">categories</a>
+              <a href="#" class="footer-link">Kursus</a>
             </li>
           </ul>
         </div>
 
         <div class="footer-content">
-          <h3 class="footer-title">Account</h3>
+          <h3 class="footer-title">Akun</h3>
           <ul class="footer-links">
             <li>
-              <a href="#" class="footer-link">register</a>
+              <a href="#" class="footer-link">Masuk</a>
             </li>
             <li>
-              <a href="#" class="footer-link">login</a>
-            </li>
-            <li>
-              <a href="#" class="footer-link">faq</a>
+              <a href="#" class="footer-link">Daftar</a>
             </li>
           </ul>
         </div>
-
-        <div class="footer-content">
-          <h3 class="footer-title">Social Media</h3>
-          <ul class="footer-social">
-            <a href="#" class="footer-social-link">
-              <i class="bx bxl-facebook"></i>
-            </a>
-            <a href="#" class="footer-social-link">
-              <i class="bx bxl-twitter"></i>
-            </a>
-            <a href="#" class="footer-social-link">
-              <i class="bx bxl-instagram"></i>
-            </a>
-          </ul>
-        </div>
-      </div>
 
       <span class="footer-copy">&#169; Team Sahitya. All rights</span>
     </footer>

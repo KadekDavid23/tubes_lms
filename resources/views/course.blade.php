@@ -19,7 +19,7 @@
                     <a class="lesson-title" href="{{ route('lessons.show', [$lesson->course_id, $lesson->slug]) }}"><i class="bx bx-play-circle"></i>{{ $lesson->title }}</a>
                 @else   
                   @if (!$purchased_course)
-                    <a class="lesson-title" aria-disabled="false" style="cursor:  alias" href="#"><i class='bx bx-lock'></i>Another course {{ $lesson->count() }}</a>
+                    <a class="lesson-title" aria-disabled="false" style="cursor:  alias" href="#"><i class='bx bx-lock'></i>Kursus Lain {{ $lesson->count() }}</a>
                   @else  
                     <a class="lesson-title" href="{{ route('lessons.show', [$lesson->course_id, $lesson->slug]) }}"><i class="bx bx-play-circle"></i>{{ $lesson->title }}</a>
                   @endif
@@ -34,12 +34,12 @@
                         <input type="hidden" name="course_id" value="{{ $course->id }}" />
                         <input type="hidden" name="amount" value="{{ $course->price }}" />
                         <input type="hidden" name="lesson_id" value="{{   $course->publishedLessons[0]->slug }}" />
-                        <button class="button detail-button">Purchase Course</button>
+                        <button class="button detail-button">Pembelian Kursus</button>
                     </form>
                 @endif
             @else
                 <a href="{{ route('register') }}?redirect_url={{ route('courses.show', [$course->slug]) }}"
-                class="button detail-button" style="text-align: center;">Buy course (${{ $course->price }})</a>
+                class="button detail-button" style="text-align: center;">Beli Kursus (Rp. {{ $course->price }})</a>
             @endif
           </div>
         </div>
